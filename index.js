@@ -8,15 +8,7 @@ process.on('uncaughtException', function (err) {
 
 function main(options) {
 
-  var cluster = new Cluster({
-      port        : 8080
-    , capacity    : 1
-    , docker      : {
-        host      : '192.168.1.10'
-      , protocol  : 'http'
-      , port      : 4243
-    }
-  });
+  var cluster = new Cluster(options);
 
   Promise
     .promisify(cluster.initialize, cluster)()
@@ -30,7 +22,15 @@ function main(options) {
 }
 
 if (require.main === module) {
-  main({ });
+  main({
+      port        : 8124
+    , capacity    : 1
+    , docker      : {
+        host      : '192.168.1.10'
+      , protocol  : 'http'
+      , port      : 4243
+    }
+  });
 }
 
 module.exports = {
