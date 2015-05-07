@@ -1,4 +1,5 @@
-var Promise  = require('bluebird')
+var argv     = require('minimist')(process.argv.slice(2))
+  , Promise  = require('bluebird')
   , Cluster  = require('./lib/cluster')
   ;
 
@@ -16,7 +17,7 @@ function main(options) {
       cluster.listen();
     })
     .catch(function(err){
-      console.error('error starting sandbox-manager', err.stack || err);
+      console.error('error starting cluster', err.stack || err);
     })
     ;
 }
@@ -25,6 +26,7 @@ if (require.main === module) {
   main({
       port        : 8124
     , capacity    : 1
+    , agent_dir   : argv.agent_dir
     , docker      : {
         host      : '192.168.1.10'
       , protocol  : 'http'
