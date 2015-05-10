@@ -25,8 +25,10 @@ function main(options) {
 if (require.main === module) {
   main({
       port        : 8124
-    , capacity    : 1
+    , capacity    : 4
     , agent_dir   : argv.agent_dir
+    , host        : 'taskmill.io'
+    , port        : 1337
     , docker      : {
         host      : argv.docker_host || 'localhost'
       , protocol  : 'http'
