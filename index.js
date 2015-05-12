@@ -29,7 +29,7 @@ if (require.main === module) {
     , capacity    : argv.capacity || 4
     , agent_dir   : argv.agent_dir
     , docker      : {
-        host      : argv.docker_host //default to undefined
+        host      : argv.docker_host || 'localhost'
       , protocol  : 'http'
       , port      : 4243
     }
