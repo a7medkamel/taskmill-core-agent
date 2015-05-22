@@ -1,6 +1,7 @@
 var argv      = require('minimist')(process.argv.slice(2))
   , Promise   = require('bluebird')
   , Agent     = require('./lib/agent')
+  , config    = require('./config')
   ;
 
 process.on('uncaughtException', function (err) {
@@ -23,20 +24,7 @@ function main(options) {
 }
 
 if (require.main === module) {
-  main({
-      port        : 8124
-    , host        : argv.host || 'taskmill.io'
-    , capacity    : argv.capacity || 4
-    , worker_dir  : argv.worker_dir
-    , cluster     : {
-        id        : argv.cluster_id
-    }
-    , docker      : {
-        host      : argv.docker_host || 'localhost'
-      , protocol  : 'http'
-      , port      : 4243
-    }
-  });
+  main(config);
 }
 
 module.exports = {
