@@ -8,7 +8,7 @@ process.on('uncaughtException', function (err) {
   console.error('uncaughtException', err.stack || err.toString());
 });
 
-function main(options) {
+function main(Agent, options) {
 
   var agent = new Agent(options);
 
@@ -24,9 +24,10 @@ function main(options) {
 }
 
 if (require.main === module) {
-  main(config);
+  main(Agent, config);
 }
 
 module.exports = {
-  main : main
+    main  : main
+  , Agent : Agent
 };
