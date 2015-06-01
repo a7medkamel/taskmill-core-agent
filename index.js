@@ -1,16 +1,34 @@
 var argv      = require('minimist')(process.argv.slice(2))
   , Promise   = require('bluebird')
-  , Agent     = require('./lib/agent')
-  , config    = require('./config')
+  , config    = require('config')
+  , Agent     = require('./lib/core/agent')
   ;
+
+Promise.longStackTraces();
 
 process.on('uncaughtException', function (err) {
   console.error('uncaughtException', err.stack || err.toString());
 });
 
-function main(Agent, options) {
+function main() {
 
-  var agent = new Agent(options);
+  var pool = undefined;
+
+  switch(argv.type) {
+    case 'docker':
+    pool = new (require('./lib/docker/pool'))();
+    break;
+    case 'proc':
+    default:
+    pool = new (require('./lib/process/pool'))();
+    break;
+  }
+
+  if (!pool) {
+    throw new Error('"type" param not defined or recognized');
+  }
+
+  var agent = new Agent(pool);
 
   Promise
     .promisify(agent.initialize, agent)()
@@ -24,10 +42,9 @@ function main(Agent, options) {
 }
 
 if (require.main === module) {
-  main(Agent, config);
+  main();
 }
 
 module.exports = {
     main  : main
-  , Agent : Agent
 };

@@ -1,0 +1,16 @@
+{
+	"worker" : {
+    "dir"   : "./node_modules/taskmill-core-worker",
+    "count" : 4,
+    "port"  : 49170
+  },
+  "group" : {
+    "id" : "ENTER A UNIQUE GUIDE HERE"
+  },
+  "docker" : {
+  },
+  "dispatcher" : {
+    "port"        : 8124,
+    "host"        : "taskmill.io"
+  }
+}
