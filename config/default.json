@@ -5,7 +5,7 @@
     "port"  : 49170
   },
   "group" : {
-    "id" : "ENTER A UNIQUE GUIDE HERE"
+    "id" : null
   },
   "docker" : {
   },

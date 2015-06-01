@@ -7,7 +7,7 @@ var argv      = require('minimist')(process.argv.slice(2))
 Promise.longStackTraces();
 
 process.on('uncaughtException', function (err) {
-  console.error('uncaughtException', err.stack || err.toString());
+  console.error(err.stack || err.toString());
 });
 
 function main() {
