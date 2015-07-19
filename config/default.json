@@ -12,5 +12,8 @@
   "dispatcher" : {
     "port"        : 8124,
     "host"        : "taskmill.io"
+  },
+  "relay" : {
+    "url"         : "https://taskmill.io:8124"
   }
 }
