@@ -14,6 +14,8 @@
     "host"        : "taskmill.io"
   },
   "relay" : {
-    "url"         : "https://taskmill.io:8124"
+    "protocol" : "https",
+    "host"  : "taskmill.io",
+    "port" : 8124
   }
 }

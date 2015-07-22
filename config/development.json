@@ -3,6 +3,8 @@
     "host" : "localhost"
   },
   "relay" : {
-    "url"         : "http://localhost:8124"
+  	"protocol" : "http",
+    "host"  : "localhost",
+    "port" : 8124
   }
 }
