@@ -15,7 +15,8 @@
   },
   "relay" : {
     "protocol" : "https",
-    "host"  : "taskmill.io",
-    "port" : 8124
+    "host" : "taskmill.io",
+    "port" : 8124,
+    "streams_port" : 8989
   }
 }
