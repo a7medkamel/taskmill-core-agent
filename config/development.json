@@ -4,7 +4,6 @@
   },
   "relay" : {
   	"protocol" : "http",
-    "host"  : "localhost",
-    "port" : 8124
+    "host"  : "localhost"
   }
 }
