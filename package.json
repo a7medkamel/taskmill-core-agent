@@ -14,6 +14,7 @@
     "dev-null": "^0.1.1",
     "dnode-http-stream": "git+https://github.com/a7medkamel/dnode-http-stream.git",
     "dockerode": "^2.2.2",
+    "http-proxy": "^1.11.1",
     "lodash": "^3.10.0",
     "minimist": "^1.1.1",
     "node-uuid": "^1.4.3",
