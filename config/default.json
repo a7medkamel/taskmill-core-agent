@@ -2,7 +2,8 @@
 	"worker" : {
     "dir"   : "./node_modules/taskmill-core-worker",
     "count" : 4,
-    "port"  : 49170
+    "port"  : 49170,
+    "pipe"  : false
   },
   "group" : {
     "id" : null
