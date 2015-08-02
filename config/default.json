@@ -3,7 +3,8 @@
     "dir"   : "./node_modules/taskmill-core-worker",
     "count" : 4,
     "port"  : 49170,
-    "pipe"  : false
+    "pipe"  : false,
+    "type"  : "docker"
   },
   "group" : {
     "id" : null

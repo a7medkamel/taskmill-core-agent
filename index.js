@@ -1,5 +1,4 @@
-var argv      = require('minimist')(process.argv.slice(2))
-  , Promise   = require('bluebird')
+var Promise   = require('bluebird')
   , config    = require('config')
   , Agent     = require('./lib/core/agent')
   ;
@@ -14,7 +13,7 @@ function main() {
 
   var pool = undefined;
 
-  switch(argv.type) {
+  switch(config.get('worker.type')) {
     case 'docker':
     pool = new (require('./lib/docker/pool'))();
     break;
