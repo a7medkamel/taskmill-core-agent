@@ -5,7 +5,8 @@
     "port"            : 49170,
     "pipe"            : false,
     "type"            : "docker",
-    "restart_after"   : 0
+    "restart_after"   : 200,
+    "mem"             : 100
   },
   "group" : {
     "id" : null
