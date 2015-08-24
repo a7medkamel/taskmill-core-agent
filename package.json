@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^2.9.34",
+    "bluebird-retry": "^0.5.0",
     "config": "^1.14.0",
     "dockerode": "^2.2.2",
     "lodash": "^3.10.0",
