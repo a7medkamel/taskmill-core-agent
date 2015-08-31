@@ -1,7 +1,4 @@
 {
-  "dispatcher" : {
-    "host" : "localhost"
-  },
   "relay" : {
   	"protocol" : "http",
     "host"  : "localhost"

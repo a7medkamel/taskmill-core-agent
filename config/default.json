@@ -13,10 +13,6 @@
   },
   "docker" : {
   },
-  "dispatcher" : {
-    "port"        : 8124,
-    "host"        : "taskmill.io"
-  },
   "relay" : {
     "protocol" : "http",
     "host" : "taskmill.io",
