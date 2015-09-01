@@ -1,4 +1,8 @@
 {
+	"worker" : {
+    "dir"             : "./node_modules/taskmill-core-worker",
+    "type"            : "proc"
+  },
   "relay" : {
   	"protocol" : "http",
     "host"  : "localhost"
