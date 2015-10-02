@@ -6,7 +6,7 @@
     "pipe"            : false,
     "type"            : "docker",
     "restart_after"   : 50,
-    "mem"             : 30
+    "mem"             : 60
   },
   "group" : {
     "id" : null
