@@ -1,6 +1,6 @@
 {
 	"worker" : {
-    "dir"             : "./node_modules/taskmill-core-worker",
+    "dir"             : "./node_modules/taskmill-core-worker-vm",
     "type"            : "proc"
   },
   "relay" : {
