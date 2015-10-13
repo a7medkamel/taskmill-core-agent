@@ -6,8 +6,11 @@
     "pipe"            : false,
     "type"            : "docker",
     "restart_after"   : 50,
-    "mem"             : 48
+    "mem"             : 55
   },
+  "kernal" : {
+    "mem"             : 256
+  }
   "group" : {
     "id" : null
   },
