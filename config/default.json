@@ -9,7 +9,8 @@
     "mem"             : 50
   },
   "kernal" : {
-    "mem"             : 256
+    "mem-min"         : 256,
+    "mem-ratio"       : 0.1
   },
   "group" : {
     "id" : null
