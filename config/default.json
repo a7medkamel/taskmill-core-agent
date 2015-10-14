@@ -2,7 +2,7 @@
 	"worker" : {
     "dir"             : "/home/nodejs/taskmill-hosted-worker",
     "count"           : 4,
-    "port"            : 49170,
+    "port"            : 39170, // 49152 => 65535 Ephemeral ports
     "pipe"            : false,
     "type"            : "docker",
     "restart_after"   : 50,
