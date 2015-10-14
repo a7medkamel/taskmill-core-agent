@@ -9,7 +9,7 @@
     "mem"             : 45
   },
   "kernal" : {
-    "mem-min"         : 256,
+    "mem-min"         : 384,
     "mem-ratio"       : 0.1
   },
   "group" : {
