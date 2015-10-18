@@ -6,7 +6,7 @@
     "pipe"            : false,
     "type"            : "docker",
     "restart_after"   : 50,
-    "mem"             : 45
+    "mem"             : 35
   },
   "kernal" : {
     "mem-min"         : 384,
