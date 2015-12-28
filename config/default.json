@@ -1,13 +1,7 @@
 {
 	"worker" : {
     "dir"             : "/home/nodejs/taskmill-hosted-worker",
-    "count"           : 4,
-    // "port"            : 39170, // 49152 => 65535 Ephemeral ports
-    "port-min"        : 10000,
-    "port-max"        : 49152, // 49152 => 65535 Ephemeral ports
-    "pipe"            : false,
     "type"            : "docker",
-    "restart_after"   : 50,
     "mem"             : 45
   },
   "kernal" : {
@@ -20,9 +14,8 @@
   "docker" : {
   },
   "relay" : {
-    "protocol" : "http",
-    "host" : "taskmill.io",
-    "port" : 8124,
-    "streams_port" : 8989
+    "protocol"  : "http",
+    "host"      : "taskmill.io",
+    "port"      : 8124
   }
 }

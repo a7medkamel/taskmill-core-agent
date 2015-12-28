@@ -1,10 +1,18 @@
 {
-	"worker" : {
-    "dir"             : "./node_modules/taskmill-core-worker-vm",
-    "type"            : "proc"
+  "group" : {
+  },
+  "docker" : {
+    "protocol"  : "https",
+    "host"      : "192.168.99.100",
+    "port"      : 2376,
+  },
+  "worker" : {
+    "dir"             : "../taskmill-core-worker",
+    "type"            : "docker"
   },
   "relay" : {
-  	"protocol" : "http",
-    "host"  : "localhost"
+    "protocol"        : "http",
+    "host"            : "ahmeds-MacBook-Pro.local",
+    "port"            : 8124
   }
 }
