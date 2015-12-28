@@ -1,5 +1,6 @@
 var Promise   = require('bluebird')
   , config    = require('config')
+  , dns       = require('dns')
   , Agent     = require('./lib/core/agent')
   ;
 
@@ -11,28 +12,29 @@ process.on('uncaughtException', function (err) {
 
 function main() {
 
-  var pool = undefined;
-
-  switch(config.get('worker.type')) {
-    case 'docker':
-    pool = new (require('./lib/docker/pool'))();
-    break;
-    case 'proc':
-    default:
-    pool = new (require('./lib/process/pool'))();
-    break;
+  function PoolFactory(agent) {
+    switch(config.get('worker.type')) {
+      case 'docker':
+      return new (require('./lib/docker/pool'))(agent);
+      case 'proc':
+      default:
+      return new (require('./lib/process/pool'))(agent);
+    }
   }
-
-  if (!pool) {
-    throw new Error('"type" param not defined or recognized');
-  }
-
-  var agent = new Agent(pool);
 
   Promise
-    .promisify(agent.initialize, agent)()
-    .then(function(){
-      agent.listen();
+    .promisify(dns.lookup)(config.get('relay.host'))
+    .then((ip) => {
+      config.relay.ip = ip;
+    })
+    .then(() => {
+      var agent = new Agent(PoolFactory);
+      
+      return Promise
+              .promisify(agent.initialize, { context : agent })()
+              .then(() => {
+                agent.listen();
+              });
     })
     .catch(function(err){
       console.error('error starting agent', err.stack || err);
