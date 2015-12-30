@@ -2,7 +2,8 @@
   "worker" : {
     "dir"             : "/home/nodejs/taskmill-hosted-worker",
     "type"            : "docker",
-    "mem"             : 45
+    "mem"             : 45,
+    "log-stdout"      : false
   },
   "kernal" : {
     "mem-min"         : 384,
