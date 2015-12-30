@@ -4,7 +4,7 @@
   "docker" : {
     "protocol"  : "https",
     "host"      : "192.168.99.100",
-    "port"      : 2376,
+    "port"      : 2376
   },
   "worker" : {
     "dir"             : "../taskmill-core-worker",
