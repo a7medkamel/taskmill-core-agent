@@ -17,7 +17,6 @@
     "ps-node": "0.0.4",
     "socket.io": "^1.3.6",
     "socket.io-client": "^1.3.6",
-    "taskmill-core-worker": "git+https://github.com/a7medkamel/taskmill-core-worker.git",
     "through2-sink": "^1.0.0"
   }
 }
