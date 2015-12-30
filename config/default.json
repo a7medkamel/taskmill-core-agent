@@ -1,5 +1,5 @@
 {
-	"worker" : {
+  "worker" : {
     "dir"             : "/home/nodejs/taskmill-hosted-worker",
     "type"            : "docker",
     "mem"             : 45
