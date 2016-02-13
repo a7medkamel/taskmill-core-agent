@@ -1,6 +1,5 @@
 {
   "worker" : {
-    "dir"             : "/home/nodejs/taskmill-hosted-worker",
     "type"            : "docker",
     "mem"             : 45,
     "log-stdout"      : false
@@ -10,13 +9,23 @@
     "mem-ratio"       : 0.1
   },
   "group" : {
-    "id" : null
+    "id"              : null
   },
   "docker" : {
   },
   "relay" : {
     "protocol"        : "http",
-    "host"            : "taskmill.io",
+    "hostname"        : "taskmill.io",
     "port"            : 8124
+  },
+  "tunnel" : {
+    "protocol"        : "http",
+    "hostname"        : "taskmill.io",
+    "port"            : 8989,
+    "dns_lookup"      : true
+  },
+  "services" : {
+    "protocol"        : "https",
+    "hostname"        : "taskmill.io"
   }
 }

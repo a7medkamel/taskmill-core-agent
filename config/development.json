@@ -2,18 +2,27 @@
   "group" : {
   },
   "docker" : {
-    "protocol"  : "https",
-    "host"      : "192.168.99.100",
-    "port"      : 2376
+    "protocol"        : "https",
+    "hostname"        : "192.168.99.100",
+    "port"            : 2376
   },
   "worker" : {
-    "dir"             : "../taskmill-core-worker",
     "type"            : "docker"
   },
   "relay" : {
     "protocol"        : "http",
-    "host"            : "ahmeds-MacBook-Pro.local",
-    "port"            : 8124,
+    "hostname"        : "[RELAY_HOSTNAME]",
+    "port"            : 8124
+  },
+  "tunnel" : {
+    "protocol"        : "http",
+    "hostname"        : "[RELAY_HOSTNAME]",
+    "port"            : 8989,
+    "force_dns_lookup": true
+  },
+  "services" : {
+    "protocol"        : "http",
+    "hostname"        : "[SERVICES_HOSTNAME]",
     "force_dns_lookup": true
   }
 }

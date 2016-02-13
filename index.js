@@ -4,10 +4,9 @@ var Promise   = require('bluebird')
   , Agent     = require('./lib/core/agent')
   ;
 
-Promise.longStackTraces();
-
 process.on('uncaughtException', function (err) {
-  console.error(err.stack || err.toString());
+  console.error(new Date().toUTCString(), 'uncaughtException', err.message);
+  console.error(err.stack);
 });
 
 function main() {
@@ -24,15 +23,20 @@ function main() {
 
   Promise
     .try(() => {
-      // if (config.has('relay.force_dns_lookup') && config.get('relay.force_dns_lookup')) {
-        return Promise
-                .promisify(dns.lookup)(config.get('relay.host'))
-                .then((ip) => {
-                  config.relay.hosts_entry = ip;
-                })
-      // } else {
-      //   config.relay.hosts_entry = config.get('relay.host');
-      // }
+      var t_ip = config.tunnel.dns_lookup
+                    ? Promise.promisify(dns.lookup)(config.tunnel.hostname)
+                    : config.tunnel.hostname;
+
+      var s_ip = config.services.dns_lookup
+                    ? Promise.promisify(dns.lookup)(config.services.hostname)
+                    : config.services.hostname;
+
+      return Promise
+              .all([ t_ip, s_ip ])
+              .spread((t_ip, s_ip) => {
+                config.tunnel.hostname = t_ip;
+                config.services.hostname = s_ip;
+              });
     })
     .then(() => {
       var agent = new Agent(PoolFactory);
