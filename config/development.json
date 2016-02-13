@@ -13,6 +13,7 @@
   "relay" : {
     "protocol"        : "http",
     "host"            : "ahmeds-MacBook-Pro.local",
-    "port"            : 8124
+    "port"            : 8124,
+    "force_dns_lookup": true
   }
 }

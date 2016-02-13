@@ -23,9 +23,16 @@ function main() {
   }
 
   Promise
-    .promisify(dns.lookup)(config.get('relay.host'))
-    .then((ip) => {
-      config.relay.ip = ip;
+    .try(() => {
+      if (config.has('relay.force_dns_lookup') && config.get('relay.force_dns_lookup')) {
+        return Promise
+                .promisify(dns.lookup)(config.get('relay.host'))
+                .then((ip) => {
+                  config.relay.hosts_entry = ip;
+                })
+      } else {
+        config.relay.hosts_entry = config.get('relay.host');
+      }
     })
     .then(() => {
       var agent = new Agent(PoolFactory);

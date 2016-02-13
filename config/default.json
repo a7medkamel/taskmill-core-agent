@@ -15,8 +15,8 @@
   "docker" : {
   },
   "relay" : {
-    "protocol"  : "http",
-    "host"      : "taskmill.io",
-    "port"      : 8124
+    "protocol"        : "http",
+    "host"            : "taskmill.io",
+    "port"            : 8124
   }
 }
