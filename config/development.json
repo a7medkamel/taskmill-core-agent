@@ -23,6 +23,7 @@
   "services" : {
     "protocol"        : "http",
     "hostname"        : "[SERVICES_HOSTNAME]",
+    "port"            : 1337,
     "force_dns_lookup": true
   }
 }
