@@ -1,6 +1,7 @@
 {
   "worker" : {
     "type"            : "docker",
+    "code-module"     : "taskmill-code-arbitrary",
     "mem"             : 45,
     "log-stdout"      : false
   },
@@ -22,7 +23,7 @@
     "protocol"        : "http",
     "hostname"        : "taskmill.io",
     "port"            : 8989,
-    "dns_lookup"      : true
+    "force_dns_lookup": true
   },
   "services" : {
     "protocol"        : "https",

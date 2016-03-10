@@ -11,23 +11,23 @@ process.on('uncaughtException', function (err) {
 
 function main() {
 
-  function PoolFactory(agent) {
+  function PoolFactory() {
     switch(config.get('worker.type')) {
       case 'docker':
-      return new (require('./lib/docker/pool'))(agent);
+      return new (require('./lib/docker/pool'))();
       case 'proc':
       default:
-      return new (require('./lib/process/pool'))(agent);
+      return new (require('./lib/process/pool'))();
     }
   }
 
   Promise
     .try(() => {
-      var t_ip = config.tunnel.dns_lookup
+      var t_ip = config.tunnel.force_dns_lookup
                     ? Promise.promisify(dns.lookup)(config.tunnel.hostname)
                     : config.tunnel.hostname;
 
-      var s_ip = config.services.dns_lookup
+      var s_ip = config.services.force_dns_lookup
                     ? Promise.promisify(dns.lookup)(config.services.hostname)
                     : config.services.hostname;
 

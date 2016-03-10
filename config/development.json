@@ -3,7 +3,7 @@
   },
   "docker" : {
     "protocol"        : "https",
-    "hostname"        : "192.168.99.100",
+    "hostname"        : "[DOCKER_HOSTNAME]",
     "port"            : 2376
   },
   "worker" : {

@@ -9,14 +9,15 @@
   "author": "a7medkamel <ak@ahmedkamel.net>",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.1.1",
-    "config": "^1.17.1",
+    "bluebird": "^3.3.4",
+    "config": "^1.19.0",
     "docker-events": "0.0.2",
-    "dockerode": "^2.2.8",
-    "lodash": "^3.10.1",
+    "dockerode": "^2.2.9",
+    "lodash": "^4.6.1",
     "node-uuid": "^1.4.7",
     "ps-node": "0.0.5",
-    "socket.io-client": "^1.4.0",
-    "through2-sink": "^1.0.0"
+    "socket.io-client": "^1.4.5",
+    "through2-sink": "^1.0.0",
+    "winston": "^2.2.0"
   }
 }
