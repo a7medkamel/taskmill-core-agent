@@ -21,36 +21,17 @@ function main() {
     }
   }
 
-  Promise
-    .try(() => {
-      var t_ip = config.tunnel.force_dns_lookup
-                    ? Promise.promisify(dns.lookup)(config.tunnel.hostname)
-                    : config.tunnel.hostname;
-
-      var s_ip = config.services.force_dns_lookup
-                    ? Promise.promisify(dns.lookup)(config.services.hostname)
-                    : config.services.hostname;
-
-      return Promise
-              .all([ t_ip, s_ip ])
-              .spread((t_ip, s_ip) => {
-                config.tunnel.hostname = t_ip;
-                config.services.hostname = s_ip;
-              });
-    })
-    .then(() => {
-      var agent = new Agent(PoolFactory);
-      
-      return Promise
-              .promisify(agent.initialize, { context : agent })()
-              .then(() => {
-                agent.listen();
-              });
-    })
-    .catch(function(err){
-      console.error('error starting agent', err.stack || err);
-    })
-    ;
+  var agent = new Agent(PoolFactory);
+            
+  return Promise
+          .promisify(agent.initialize, { context : agent })()
+          .then(() => {
+            agent.listen();
+          })
+          .catch(function(err){
+            console.error('error starting agent', err.stack || err);
+            throw err;
+          });
 }
 
 if (require.main === module) {

@@ -3,31 +3,19 @@
     "type"            : "docker",
     "code-module"     : "taskmill-code-arbitrary",
     "image"           : "a7medkamel/taskmill-core-worker",
-    "mem"             : 45,
     "log-stdout"      : false
   },
-  "kernal" : {
-    "mem-min"         : 384,
-    "mem-ratio"       : 0.1
+  "agent" : {
+    "group-id"              : null,
+    "docker"                : {},
+    "allow-foreign-code"    : true
   },
-  "group" : {
-    "id"              : null
-  },
-  "docker" : {
-  },
-  "relay" : {
-    "protocol"        : "http",
-    "hostname"        : "taskmill.io",
-    "port"            : 8124
-  },
+  "relay"             : "http://taskmill.io:8124",
   "tunnel" : {
-    "protocol"        : "http",
-    "hostname"        : "taskmill.io",
-    "port"            : 8989,
+    "url"             : "http://taskmill.io:8989",
     "force_dns_lookup": true
   },
   "services" : {
-    "protocol"        : "https",
-    "hostname"        : "taskmill.io"
+    "url"             : "https://taskmill.io"
   }
 }

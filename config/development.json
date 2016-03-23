@@ -1,29 +1,12 @@
 {
-  "group" : {
-  },
-  "docker" : {
-    "protocol"        : "https",
-    "hostname"        : "[DOCKER_HOSTNAME]",
-    "port"            : 2376
-  },
   "worker" : {
-    "type"            : "docker"
+    "type"              : "docker",
+    "image"             : "a7medkamel/taskmill-core-worker",
+    // "code-module"     : "../../taskmill-code-arbitrary",
+    // "src"               : "../taskmill-core-worker",
+    "log-stdout"        : true
   },
-  "relay" : {
-    "protocol"        : "http",
-    "hostname"        : "[RELAY_HOSTNAME]",
-    "port"            : 8124
-  },
-  "tunnel" : {
-    "protocol"        : "http",
-    "hostname"        : "[RELAY_HOSTNAME]",
-    "port"            : 8989,
-    "force_dns_lookup": true
-  },
-  "services" : {
-    "protocol"        : "http",
-    "hostname"        : "[SERVICES_HOSTNAME]",
-    "port"            : 1337,
-    "force_dns_lookup": true
+  "agent" : {
+    "group-id"          : "64FD1450-AD09-4643-9A8E-CEB571DF0FE9"
   }
 }
