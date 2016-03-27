@@ -21,16 +21,15 @@ function main() {
     }
   }
 
-  var agent = new Agent(PoolFactory);
-            
   return Promise
-          .promisify(agent.initialize, { context : agent })()
-          .then(() => {
-            agent.listen();
+          .try(() => {
+            return new Agent(PoolFactory);
           })
-          .catch(function(err){
-            console.error('error starting agent', err.stack || err);
-            throw err;
+          .tap((agent) => {
+            return agent.initialize();
+          })
+          .then((agent) => {
+            agent.listen();
           });
 }
 
