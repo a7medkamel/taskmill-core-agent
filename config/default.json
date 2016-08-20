@@ -1,5 +1,6 @@
 {
   "worker" : {
+    "pull"            : true,
     "type"            : "docker",
     "code-module"     : "taskmill-code-arbitrary",
     "image"           : "a7medkamel/taskmill-core-worker",
