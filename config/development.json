@@ -8,5 +8,8 @@
   },
   "agent" : {
     "group-id"          : "64FD1450-AD09-4643-9A8E-CEB571DF0FE9"
-  }
+  },
+  "relay"               : "http://localhost:8124",
+  "tunnel"              : "http://__host.io:8989",
+  "services"            : "http://__host.io:1337",
 }
