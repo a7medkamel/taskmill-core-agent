@@ -11,7 +11,7 @@
     "docker"                : {},
     "allow-foreign-code"    : true
   },
-  "relay"             : "http://gateway.breadboard.io:8124",
-  "tunnel"            : "http://gateway.breadboard.io:8989",
+  "relay"             : "http://foobar.run:8124",
+  "tunnel"            : "http://foobar.run:8989",
   "services"          : "https://breadboard.io"
 }
