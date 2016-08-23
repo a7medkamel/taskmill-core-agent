@@ -1,7 +1,7 @@
-var Promise   = require('bluebird')
-  , config    = require('config')
-  , dns       = require('dns')
-  , Agent     = require('./lib/core/agent')
+var Promise     = require('bluebird')
+  , config      = require('config')
+  , Agent       = require('./lib/Agent')
+  , DockerPool  = require('./lib/pool/DockerPool')
   ;
 
 process.on('uncaughtException', function (err) {
@@ -10,20 +10,9 @@ process.on('uncaughtException', function (err) {
 });
 
 function main() {
-
-  function PoolFactory() {
-    switch(config.get('worker.type')) {
-      case 'docker':
-      return new (require('./lib/docker/pool'))();
-      case 'proc':
-      default:
-      return new (require('./lib/process/pool'))();
-    }
-  }
-
   return Promise
           .try(() => {
-            return new Agent(PoolFactory);
+            return new Agent(new DockerPool());
           })
           .tap((agent) => {
             return agent.initialize();
