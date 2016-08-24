@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.1",
+    "bluebird-retry": "^0.8.0",
     "config": "^1.21.0",
     "config-url": "git+https://github.com/a7medkamel/config-url.git",
     "docker-events": "0.0.2",

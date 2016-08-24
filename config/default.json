@@ -8,7 +8,6 @@
   },
   "agent" : {
     "group-id"              : null,
-    "docker"                : {},
     "allow-foreign-code"    : true
   },
   "relay"             : "http://foobar.run:8124",
