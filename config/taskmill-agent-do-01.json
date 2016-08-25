@@ -1,0 +1,5 @@
+{
+  "agent" : {
+    "url" : "http://agent-do-01.breadboard.io:8090"
+  }
+}
