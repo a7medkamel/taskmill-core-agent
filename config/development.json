@@ -11,6 +11,5 @@
     "url"               : "http://localhost:8090"
   },
   "relay"               : "http://localhost:8124",
-  "tunnel"              : "http://__host.io:8989",
   "services"            : "http://__host.io:1337",
 }

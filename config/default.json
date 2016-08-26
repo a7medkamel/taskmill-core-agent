@@ -11,6 +11,5 @@
     "allow-foreign-code"    : true
   },
   "relay"             : "http://foobar.run:8124",
-  "tunnel"            : "http://foobar.run:8989",
   "services"          : "https://breadboard.io"
 }
