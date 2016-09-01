@@ -10,6 +10,10 @@
     "group-id"              : null,
     "allow-foreign-code"    : true
   },
+  "codedb" : {
+    "url"             : "http://code.breadboard.io:8585",
+    "ttl"             : 86400
+  },
   "relay"             : "http://foobar.run:8124",
   "services"          : "https://breadboard.io"
 }
