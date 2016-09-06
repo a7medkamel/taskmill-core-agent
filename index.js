@@ -1,7 +1,6 @@
 var Promise     = require('bluebird')
   , config      = require('config')
   , Agent       = require('./lib/Agent')
-  , DockerPool  = require('./lib/pool/DockerPool')
   ;
 
 process.on('uncaughtException', function (err) {
@@ -12,7 +11,7 @@ process.on('uncaughtException', function (err) {
 function main() {
   return Promise
           .try(() => {
-            return new Agent(new DockerPool());
+            return new Agent();
           })
           .tap((agent) => {
             return agent.initialize();
