@@ -1,10 +1,11 @@
 {
   "worker" : {
     "pull"            : true,
-    "type"            : "docker",
     "code-module"     : "taskmill-code-arbitrary",
     "image"           : "a7medkamel/taskmill-core-worker",
-    "log-stdout"      : false
+    "log"             : false,
+    "max-idle"        : 600, // seconds
+    "max-memory"      : 256 // mb
   },
   "agent" : {
     "group-id"              : null,
