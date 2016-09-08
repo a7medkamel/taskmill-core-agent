@@ -1,15 +1,12 @@
 {
   "worker" : {
-    "type"              : "docker",
     "image"             : "a7medkamel/taskmill-core-worker",
-    // "code-module"     : "../../taskmill-code-arbitrary",
-    // "src"               : "../taskmill-core-worker",
-    "log-stdout"        : true
+    "log"               : true
   },
   "agent" : {
     "group-id"          : "64FD1450-AD09-4643-9A8E-CEB571DF0FE9",
     "url"               : "http://localhost:8090"
   },
   "relay"               : "http://localhost:8124",
-  "services"            : "http://__host.io:1337",
+  "services"            : "http://__host.io:1337"
 }
