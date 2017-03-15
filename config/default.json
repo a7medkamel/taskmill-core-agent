@@ -1,11 +1,17 @@
 {
   "worker" : {
-    "pull"            : true,
-    "code-module"     : "taskmill-code-arbitrary",
-    "image"           : "a7medkamel/taskmill-core-worker",
-    "log"             : false,
-    "max-idle"        : 600, // seconds
-    "max-memory"      : 256 // mb
+    "pull"              : true,
+    "code-module"       : "taskmill-code-disk",
+    "image"             : "a7medkamel/taskmill-core-worker",
+    "mount"             : false,
+    "log"               : false,
+    "max-idle"          : 600, // seconds
+    "max-memory"        : 512 // mb
+  },
+  "docker" : {
+    "cloud" : {
+      "key" : null
+    }
   },
   "agent" : {
     "group-id"              : null,

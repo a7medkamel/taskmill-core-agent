@@ -3,6 +3,10 @@ var Promise     = require('bluebird')
   , Agent       = require('./lib/Agent')
   ;
 
+Promise.config({
+  longStackTraces: true
+})
+
 process.on('uncaughtException', function (err) {
   console.error(new Date().toUTCString(), 'uncaughtException', err.message);
   console.error(err.stack);
