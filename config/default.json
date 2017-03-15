@@ -6,7 +6,7 @@
     "mount"             : false,
     "log"               : false,
     "max-idle"          : 600, // seconds
-    "max-memory"        : 512 // mb
+    "max-memory"        : 256 // mb
   },
   "docker" : {
     "cloud" : {
