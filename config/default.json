@@ -6,7 +6,13 @@
     "mount"             : false,
     "log"               : false,
     "max-idle"          : 600, // seconds
-    "max-memory"        : 256 // mb
+    "max-memory"        : 256, // mb
+    "redis" : {
+      "host"      : "[REDIS_HOST]",
+      "port"      : 6379,
+      "password"  : "[REDIS_PASSWORD]",
+      "db"        : 4
+    }
   },
   "docker" : {
     "cloud" : {
