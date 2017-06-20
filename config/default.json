@@ -1,4 +1,12 @@
 {
+  "make" : {
+    "url" : "http://make.breadboard.io:8075",
+    "redis" : {
+      "db": 4,
+      "host": "[REDIS_HOST]",
+      "port": 6379
+    }
+  },
   "worker" : {
     "pull"              : true,
     "code-module"       : "taskmill-code-disk",
@@ -20,7 +28,6 @@
     }
   },
   "agent" : {
-    "group-id"              : null,
     "allow-foreign-code"    : true
   },
   "codedb" : {

@@ -1,11 +1,18 @@
 {
+  "make" : {
+    "url" : "http://localhost:8075",
+    "redis" : {
+      "db": 4,
+      "host": "localhost",
+      "port": 6379
+    }
+  },
   "worker" : {
     "image"             : "a7medkamel/taskmill-core-worker",
     "log"               : true,
     "mount"             : []
   },
   "agent" : {
-    "group-id"          : "64FD1450-AD09-4643-9A8E-CEB571DF0FE9",
     "url"               : "http://localhost:8090"
   },
   "codedb" : {

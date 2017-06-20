@@ -1,7 +1,9 @@
 var Promise     = require('bluebird')
   , config      = require('config')
-  , Agent       = require('./lib/Agent')
+  , Agent       = require('./lib/agent')
   ;
+
+require('http').globalAgent.keepAlive = true;
 
 Promise.config({
   longStackTraces: true
@@ -13,15 +15,12 @@ process.on('uncaughtException', function (err) {
 });
 
 function main() {
+  let agent = new Agent();
+
   return Promise
-          .try(() => {
-            return new Agent();
-          })
-          .tap((agent) => {
-            return agent.initialize();
-          })
-          .then((agent) => {
-            agent.listen();
+          .all([ agent.clean(), agent.pull() ])
+          .then(() => {
+            return agent.connect();
           });
 }
 
