@@ -35,5 +35,5 @@
     "ttl"             : 86400
   },
   "relay"             : "http://foobar.run:8124",
-  "services"          : "https://api.breadboard.io:8025"
+  "services"          : "http://api.breadboard.io:8025"
 }
