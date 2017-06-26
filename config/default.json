@@ -11,7 +11,7 @@
     "pull"              : true,
     "code-module"       : "taskmill-code-disk",
     "image"             : "a7medkamel/taskmill-core-worker",
-    "mount"             : false,
+    "mount"             : [],
     "log"               : false,
     "max-idle"          : 600, // seconds
     "max-memory"        : 256, // mb
