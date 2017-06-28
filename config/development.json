@@ -21,5 +21,5 @@
   },
   "relay"               : "http://localhost:8124",
   "services"            : "http://__host.io:8025",
-  "account"             : "http://localhost:8050"
+  "account"             : "http://__host.io:8050"
 }
