@@ -20,5 +20,6 @@
     "ttl"             : 86400
   },
   "relay"               : "http://localhost:8124",
-  "services"            : "http://__host.io:8025"
+  "services"            : "http://__host.io:8025",
+  "account"             : "http://localhost:8050"
 }
