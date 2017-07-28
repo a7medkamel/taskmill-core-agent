@@ -30,3 +30,7 @@ node_modules
 local.json
 
 .disk
+
+config/.jwt
+
+config/local.js
