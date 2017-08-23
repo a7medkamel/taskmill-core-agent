@@ -21,6 +21,9 @@ function main() {
           .all([ agent.clean(), agent.pull() ])
           .then(() => {
             return agent.connect();
+          })
+          .catch((err) => {
+            console.error(err.toString());
           });
 }
 
