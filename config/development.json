@@ -16,8 +16,7 @@
     "url"               : "http://localhost:8090"
   },
   "codedb" : {
-    "url"             : "http://localhost:8585",
-    "ttl"             : 86400
+    "url"             : "http://localhost:8585"
   },
   "relay"               : "http://localhost:8124",
   "services"            : "http://__host.io:8025",
